@@ -1,0 +1,18 @@
+[
+    {
+        "name":"squat",
+        "description":"a compound leg movement"
+    },
+    {
+        "name":"deadlift",
+        "description":"a compound leg and back movement"
+    },
+    {
+        "name":"barbell row",
+        "description":"a compound back movement"
+    },
+    {
+        "name":"overhead press",
+        "description":"a compound shoulder movement"
+    }
+]
