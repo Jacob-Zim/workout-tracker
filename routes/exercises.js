@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const Exercise = require('../models/exercise');
 
 // GET/READ ALL
-router.get('/exercises', (req, res, next) => {
+router.get('/', (req, res, next) => {
   Exercise.find()
     .sort('name')
     .then(results => {
@@ -18,7 +18,7 @@ router.get('/exercises', (req, res, next) => {
     });
 });
 
-router.post('/exercises', (req, res, next) => {
+router.post('/', (req, res, next) => {
   const { name, description } = req.body;
   const exerciseObj = { name, description };
   Exercise.create(exerciseObj)
@@ -30,7 +30,7 @@ router.post('/exercises', (req, res, next) => {
     });
 });
 
-router.put('/exercises/:id', (req, res, next) => {
+router.put('/:id', (req, res, next) => {
   const { id } = req.params;
   const { name, description } = req.body;
   const exerciseObj = { name, description };

@@ -7,6 +7,8 @@ const mongoose = require('mongoose');
 const { PORT, MONGODB_URI } = require('./config');
 
 const exercisesRouter = require('./routes/exercises');
+const sessionsRouter = require('./routes/sessions');
+const setsRouter = require('./routes/sets');
 
 // Create an Express application
 const app = express();
@@ -23,7 +25,9 @@ app.use(morgan(process.env.NODE_ENV === 'development' ? 'dev' : 'common', {
 app.use(express.json());
 
 // Mount router on "/"
-app.use('/', exercisesRouter);
+app.use('/exercises', exercisesRouter);
+app.use('/sessions', sessionsRouter);
+app.use('/sets', setsRouter);
 
 // Catch-all 404
 app.use(function (req, res, next) {

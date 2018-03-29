@@ -3,8 +3,10 @@ const mongoose = require('mongoose');
 
 const { MONGODB_URI } = require('../config');
 const Exercise = require('../models/exercise');
+const Session = require('../models/session');
 
 const seedExercises = require('../db/seed/exercises');
+const seedSessions = require('../db/seed/sessions');
 
 mongoose.connect(MONGODB_URI)
   .then(() => mongoose.connection.db.dropDatabase())
@@ -12,6 +14,8 @@ mongoose.connect(MONGODB_URI)
     return Promise.all([
       Exercise.insertMany(seedExercises),
       Exercise.createIndexes(),
+      Session.insertMany(seedSessions),
+      Session.createIndexes()
     ]);
   })
   .then(() => mongoose.disconnect())

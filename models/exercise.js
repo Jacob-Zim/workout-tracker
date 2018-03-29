@@ -13,4 +13,4 @@ exerciseSchema.set('toObject', {
   }
 });
 
-module.exports = mongoose.model('Exercises', exerciseSchema);
+module.exports = mongoose.model('Exercise', exerciseSchema);
