@@ -26,8 +26,7 @@ app.use(express.json());
 
 // Mount router on "/"
 app.use('/exercises', exercisesRouter);
-app.use('/sessions', sessionsRouter);
-app.use('/sets', setsRouter);
+app.use('/sessions', sessionsRouter, setsRouter);
 
 // Catch-all 404
 app.use(function (req, res, next) {

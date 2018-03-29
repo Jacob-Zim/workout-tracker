@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const setSchema = new mongoose.Schema({
   reps: Number,
   weight: Number,
-  exercise: { type: mongoose.Schema.Types.ObjectId, ref:'Exercise' }
+  exerciseId: { type: mongoose.Schema.Types.ObjectId, ref:'Exercise' }
 });
 
 setSchema.set('toObject', {
